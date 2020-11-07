@@ -44,6 +44,7 @@ export default {}
 <style scoped>
 .nav-item .btn-success {
   font-size: 20px;
+  margin-top: 10px;
 }
 .nav-item {
   margin-left: 10px;
