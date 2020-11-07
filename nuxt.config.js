@@ -2,11 +2,15 @@ export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   target: 'server',
   head: {
-    title: 'food-blog',
+    title: 'Movie Library',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'An amazing Movie Library',
+      },
     ],
     script: [
       { src: 'https://code.jquery.com/jquery-3.5.1.slim.min.js' },

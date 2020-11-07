@@ -2,7 +2,7 @@
   <section class="header-component">
     <div class="container-fluid">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <nuxt-link class="navbar-brand" to="/">Awesome Food Blog</nuxt-link>
+        <nuxt-link class="navbar-brand" to="/">Awesome Movie Library</nuxt-link>
         <button
           class="navbar-toggler"
           type="button"
