@@ -27,7 +27,7 @@
             </li>
             <li class="nav-item">
               <nuxt-link class="btn btn-success" to="/new-post"
-                >Create Post</nuxt-link
+                >New Movie</nuxt-link
               >
             </li>
           </ul>
