@@ -6,10 +6,10 @@
           <label for="">Movie title</label>
           <input
             required
-            type=""
-            id=""
+            type="text"
+            id="title"
             class="form-control"
-            name=""
+            name="title"
             v-model="newMovie.title"
           />
         </div>
@@ -17,10 +17,10 @@
           <label for="">Movie Image</label>
           <input
             required
-            type=""
-            id=""
+            type="url"
+            id="image"
             class="form-control"
-            name=""
+            name="image"
             v-model="newMovie.image"
             placeholder="Enter a valid image link to display your awesome movie"
           />
@@ -30,9 +30,9 @@
           <input
             required
             type="date"
-            id=""
+            id="date"
             class="form-control"
-            name=""
+            name="date"
             v-model="date"
           />
         </div>
@@ -41,19 +41,18 @@
           <input
             required
             type="text"
-            id=""
+            id="preview"
             class="form-control"
-            name=""
+            name="preview"
             v-model="newMovie.preview"
           />
         </div>
         <div class="form-group">
           <label for="">Movie synopsis </label>
           <textarea
-            type=""
-            id=""
+            id="synopsis"
             class="form-control"
-            name=""
+            name="synopsis"
             v-model="newMovie.content"
             rows="3"
             required
