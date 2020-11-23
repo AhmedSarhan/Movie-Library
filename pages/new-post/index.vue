@@ -86,8 +86,8 @@ export default {
   },
   mounted() {},
   methods: {
-    createPost() {
-      this.$axios
+    async createPost() {
+      await this.$axios
         .$post('https://movie-library-7e5ec.firebaseio.com/posts.json', {
           ...this.newMovie,
           date: moment(this.date).format('MMM Do YYYY'),

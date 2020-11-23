@@ -13,12 +13,11 @@ export default {
       loadedPosts: [],
     }
   },
-  mounted() {
-    this.$axios
+  async fetch() {
+    await this.$axios
       .$get('https://movie-library-7e5ec.firebaseio.com/posts.json')
       .then((response) => {
         this.loadedPosts = Object.values(response)
-        console.log(this.loadedPosts)
       })
       .catch((res) => {
         if (!res.response) {
@@ -35,27 +34,9 @@ export default {
           })
         }
       })
-    //
-    //
   },
-  computed: {},
   components: {
     PostsPreview,
-  },
-
-  methods: {
-    // pushPosts() {
-    //   for (let i = 0; i <= this.loadedPosts.length; i++) {
-    //     this.$axios
-    //       .$post(
-    //         'https://movie-library-7e5ec.firebaseio.com/posts.json',
-    //         this.loadedPosts[i]
-    //       )
-    //       .then((res) => {
-    //         console.log(res)
-    //       })
-    //   }
-    // },
   },
 }
 </script>

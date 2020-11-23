@@ -26,9 +26,8 @@ export default {
       newPosts: [],
     }
   },
-  computed: {},
-  mounted() {
-    this.$axios
+  async fetch() {
+    await this.$axios
       .$get('https://movie-library-7e5ec.firebaseio.com/posts.json')
       .then((res) => {
         let loadedPosts = {}
@@ -53,6 +52,8 @@ export default {
         }
       })
   },
+  computed: {},
+  mounted() {},
 }
 </script>
 
