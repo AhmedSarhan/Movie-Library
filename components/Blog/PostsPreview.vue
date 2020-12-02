@@ -36,4 +36,8 @@ export default {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+.card-subtitle {
+  color: #ccc !important;
+  font-size: 16px !important;
+}
 </style>
