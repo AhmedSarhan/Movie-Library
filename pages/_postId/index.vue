@@ -1,6 +1,6 @@
 <template>
   <section class="single-post-page">
-    <div class="container" v-for="post in posts" :key="post.id">
+    <div class="container">
       <div
         class="post-thumbnail"
         :style="{
@@ -18,38 +18,24 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   data() {
     return {
       postId: this.$route.params.postId,
-      posts: [],
-      newPosts: [],
+      post: {},
     }
   },
   async fetch() {
-    await this.$axios
-      .$get('https://movie-library-7e5ec.firebaseio.com/posts.json')
+    await axios
+      .get(
+        `https://movie-library-7e5ec.firebaseio.com/posts/${this.postId}.json`
+      )
       .then((res) => {
-        let loadedPosts = {}
-        loadedPosts = { ...res }
-        this.posts = Object.values(loadedPosts).filter(
-          (post) => post.id === this.postId
-        )
+        this.post = { ...res.data }
       })
-      .catch((res) => {
-        if (!res.response) {
-          console.error(res)
-          context.error({
-            statusCode: 404,
-            message: 'Failed to receive content form api',
-          })
-        } else {
-          console.error(res.response.data)
-          context.error({
-            statusCode: res.response.status,
-            message: res.response.data,
-          })
-        }
+      .catch((err) => {
+        console.log(err)
       })
   },
   computed: {},

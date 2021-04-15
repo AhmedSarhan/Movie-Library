@@ -71,7 +71,7 @@
 
 <script>
 import moment from 'moment'
-import slugify from 'slugify'
+import axios from 'axios'
 export default {
   data() {
     return {
@@ -87,16 +87,10 @@ export default {
   mounted() {},
   methods: {
     async createPost() {
-      await this.$axios
-        .$post('https://movie-library-7e5ec.firebaseio.com/posts.json', {
+      await axios
+        .post('https://movie-library-7e5ec.firebaseio.com/posts.json', {
           ...this.newMovie,
           date: moment(this.date).format('MMM Do YYYY'),
-          id: slugify(this.newMovie.title, {
-            replacement: '-', // replace spaces with replacement character, defaults to `-`
-            remove: /[*+~.()'"!:@]/g, // remove characters that match regex, defaults to `undefined`
-            lower: true, // convert to lower case, defaults to `false`
-            strict: true, // strip special characters except replacement, defaults to `false`
-          }),
         })
         .then((res) => {
           this.$router.push('/')

@@ -1,6 +1,6 @@
 <template>
   <div class="posts-preview">
-    <div class="row">
+    <div class="row" v-if="posts && posts.length">
       <div class="col-md-4" v-for="post in posts" :key="post.id">
         <div class="card">
           <img class="card-img-top" :src="post.image" alt="Meal 1" />
@@ -16,6 +16,9 @@
           </div>
         </div>
       </div>
+    </div>
+    <div v-else>
+      <h3 class="text-center my-4">No movies added yet</h3>
     </div>
   </div>
 </template>
